@@ -1,9 +1,8 @@
-# Part 4: CRUD 패턴과 에러 처리
-
-> **작성 배경**: 회사 코드를 보며 배운 표준 CRUD 구현 방식
-> **작성일**: 2026-02-19
-> **난이도**: ⭐⭐⭐☆☆
-
+---
+title: "CRUD 패턴과 에러 처리"
+date: 2025-02-19 12:00:00 +0900
+categories: [Study, FastAPI]
+tags: [fastapi, crud, error-handling, python]
 ---
 
 ## 들어가며

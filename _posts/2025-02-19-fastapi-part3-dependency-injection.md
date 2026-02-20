@@ -1,9 +1,8 @@
-# Part 3: 의존성 주입 패턴 완전 정복
-
-> **작성 배경**: 회사 코드를 보며 배운 Depends의 마법
-> **작성일**: 2026-02-19
-> **난이도**: ⭐⭐⭐☆☆
-
+---
+title: "의존성 주입 패턴 완전 정복"
+date: 2025-02-19 11:00:00 +0900
+categories: [Study, FastAPI]
+tags: [fastapi, dependency-injection, python, depends]
 ---
 
 ## 들어가며

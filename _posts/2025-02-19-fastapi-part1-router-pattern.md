@@ -1,9 +1,8 @@
-# Part 1: FastAPI Router 패턴과 프로젝트 구조
-
-> **작성 배경**: 회사 코드를 보며 배운 Router 분리 패턴
-> **작성일**: 2026-02-19
-> **난이도**: ⭐⭐☆☆☆
-
+---
+title: "FastAPI Router 패턴과 프로젝트 구조"
+date: 2025-02-19 09:00:00 +0900
+categories: [Study, FastAPI]
+tags: [fastapi, router, project-structure, python]
 ---
 
 ## 들어가며
@@ -103,9 +102,9 @@ async def login():
 ```
 
 **장점:**
-- ✅ main.py는 조립만 (20줄)
-- ✅ 기능별로 파일 분리 (찾기 쉬움)
-- ✅ 팀 작업 시 충돌 최소화
+- main.py는 조립만 (20줄)
+- 기능별로 파일 분리 (찾기 쉬움)
+- 팀 작업 시 충돌 최소화
 
 **마치 레고 블록처럼**: 각 Router를 블록으로 만들고, main.py에서 조립하는 느낌
 
@@ -435,18 +434,6 @@ Router 분리를 적용할 때:
 
 ---
 
-## 다음 편 예고
-
-**Part 2: Pydantic 모델 네이밍과 역할 분리**
-
-회사 코드를 보니 `BoardCreateDto`, `BoardResponseDto` 같은 네이밍이 있었다.
-
-이게 뭘까? 왜 이렇게 이름을 지었을까?
-
-다음 편에서 알아보자.
-
----
-
 ## 참고 템플릿
 
 복사해서 바로 쓸 수 있는 기본 Router:
@@ -495,7 +482,3 @@ from routers import example
 app = FastAPI()
 app.include_router(example.router)
 ```
-
----
-
-**회사에서 배우는 중... 🚀**

@@ -1,9 +1,8 @@
-# Part 2: Pydantic 모델 네이밍과 역할 분리
-
-> **작성 배경**: 회사 코드를 보며 배운 DTO 네이밍 체계
-> **작성일**: 2026-02-19
-> **난이도**: ⭐⭐☆☆☆
-
+---
+title: "Pydantic 모델 네이밍과 역할 분리"
+date: 2025-02-19 10:00:00 +0900
+categories: [Study, FastAPI]
+tags: [fastapi, pydantic, dto, python]
 ---
 
 ## 들어가며
@@ -372,7 +371,7 @@ return BoardResponseDto(
 | 생성 | `BoardCreateDto` | `MetadataFieldCreate` |
 | 수정 | `BoardUpdateDto` | `MetadataFieldUpdate` |
 | 응답 | `BoardResponseDto` | `MetadataFieldResponse` |
-| Dto 사용 | ✅ | ❌ |
+| Dto 사용 | O | X |
 
 **느낀 점:**
 - `Dto` 붙이는 건 선택 사항
@@ -554,18 +553,6 @@ DTO를 만들 때:
 
 ---
 
-## 다음 편 예고
-
-**Part 3: 의존성 주입 패턴 완전 정복**
-
-회사 코드를 보니 `Depends(get_db)`, `Depends(get_current_user)` 같은 패턴이 자주 나왔다.
-
-이게 뭘까? 왜 이렇게 쓸까?
-
-다음 편에서 알아보자.
-
----
-
 ## 참고 템플릿
 
 복사해서 바로 쓸 수 있는 기본 DTO 세트:
@@ -577,32 +564,24 @@ from typing import Optional, List
 from datetime import datetime
 from enum import Enum
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Enum
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class ExampleStatus(str, Enum):
     ACTIVE = "active"
     INACTIVE = "inactive"
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Create (생성 요청)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class ExampleCreateDto(BaseModel):
     name: str = Field(..., description="이름", min_length=1, max_length=100)
     description: str = Field(..., description="설명")
     status: ExampleStatus = ExampleStatus.ACTIVE
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Update (수정 요청 - 모든 필드 Optional!)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class ExampleUpdateDto(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
     status: Optional[ExampleStatus] = None
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Response (응답)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class ExampleResponseDto(BaseModel):
     id: str
     name: str
@@ -614,9 +593,7 @@ class ExampleResponseDto(BaseModel):
     class Config:
         from_attributes = True
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # List (목록 응답)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class PaginationDto(BaseModel):
     current_page: int
     page_size: int
@@ -629,14 +606,8 @@ class ExampleListDto(BaseModel):
     examples: List[ExampleResponseDto]
     pagination: PaginationDto
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Delete (삭제 응답)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class ExampleDeleteResponseDto(BaseModel):
     message: str
     id: str
 ```
-
----
-
-**회사에서 배우는 중... 🚀**

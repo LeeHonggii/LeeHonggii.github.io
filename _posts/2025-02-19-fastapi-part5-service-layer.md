@@ -1,9 +1,8 @@
-# Part 5: 서비스 계층과 비즈니스 로직 분리
-
-> **작성 배경**: 회사 코드를 보며 배운 서비스 클래스 패턴
-> **작성일**: 2026-02-19
-> **난이도**: ⭐⭐⭐⭐☆
-
+---
+title: "서비스 계층과 비즈니스 로직 분리"
+date: 2025-02-19 13:00:00 +0900
+categories: [Study, FastAPI]
+tags: [fastapi, service-layer, architecture, python]
 ---
 
 ## 들어가며

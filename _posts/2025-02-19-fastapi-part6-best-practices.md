@@ -1,9 +1,8 @@
-# Part 6: 실무 패턴 총정리
-
-> **작성 배경**: 회사에서 배운 모든 FastAPI 패턴 정리
-> **작성일**: 2026-02-19
-> **난이도**: ⭐⭐⭐⭐☆
-
+---
+title: "실무 패턴 총정리"
+date: 2025-02-19 14:00:00 +0900
+categories: [Study, FastAPI]
+tags: [fastapi, best-practices, summary, python]
 ---
 
 ## 들어가며

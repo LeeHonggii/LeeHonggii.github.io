@@ -2,9 +2,9 @@
 
 title: "LLM 퀴즈 생성 파이프라인 실전 기록: 재시도·토큰·시간까지 까본 작업 로그"
 date: 2025-02-05 09:30:00 +0900
-categories: [LLM, Engineering]
+categories: [Daily, LLM]
 tags: [pipeline, retry, validation, metrics, self-correction, context-grounding]
---------------------------------------------------------------------------------
+---
 
 ## 안녕하세요
 

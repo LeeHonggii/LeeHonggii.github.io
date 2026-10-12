@@ -4,3 +4,6 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .harness/
+
+# 제브 품질 게이트 미달 보류 초안 (공개 금지 — 유출 가능성 있는 초안 포함)
+_drafts/
